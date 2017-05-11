@@ -1,66 +1,46 @@
+import javax.swing.text.html.ImageView;
 
 public class Sense8 {
 	
-	private Object Will;
-	private Object Capheus;
-	private Object Wolfgang;
-	private Object Lito;
-	private Object Nomi;
-	private Object Kala;
-	private Object Sun;
-	private Object Riley;
-	private boolean kalagang;
-	private boolean nomanita;
-	private boolean litando;
-	
-	public Sense8(boolean kalawolfgang, boolean nomiamanita, boolean litohernando) {
-		kalagang = kalawolfgang;
-		nomanita = nomiamanita;
-		litando = litohernando;
-	}
-	
-	public Object getEvil() {
-		Object Whispers = new Object();
-		return Whispers;
-	}
-	
-	public String getEvilOrganization() {
-		String evil = "Biologic Preservation Organization";
-		return evil;
-	}
+	private ImageView Will;
+	private ImageView Capheus;
+	private ImageView Wolfgang;
+	private ImageView Lito;
+	private ImageView Nomi;
+	private ImageView Kala;
+	private ImageView Sun;
+	private ImageView Riley;
 
-	public Object getWill() {
+	public ImageView getWill() {
 		return Will;
 	}
 
-	public Object getCapheus() {
+	public ImageView getCapheus() {
 		return Capheus;
 	}
 
-	public Object getWolfgang() {
+	public ImageView getWolfgang() {
 		kalagang = true;
 		return Wolfgang;
 	}
 
-	public Object getLito() {
-		litando = true;
+	public ImageView getLito() {
 		return Lito;
 	}
 
-	public Object getNomi() {
-		nomanita = true;
+	public ImageView getNomi() {
 		return Nomi;
 	}
-	public Object getKala() {
+	public ImageView getKala() {
 		kalagang = true;
 		return Kala;
 	}
 
-	public Object getSun() {
+	public ImageView getSun() {
 		return Sun;
 	}
 
-	public Object getRiley() {
+	public ImageView getRiley() {
 		return Riley;
 	}
 }
