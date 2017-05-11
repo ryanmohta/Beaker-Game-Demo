@@ -1,4 +1,4 @@
-import javafx.scene.image.ImageView;
+import javax.swing.text.html.ImageView;
 
 public class Sense8 {
 	
@@ -20,6 +20,7 @@ public class Sense8 {
 	}
 
 	public ImageView getWolfgang() {
+		kalagang = true;
 		return Wolfgang;
 	}
 
@@ -31,6 +32,7 @@ public class Sense8 {
 		return Nomi;
 	}
 	public ImageView getKala() {
+		kalagang = true;
 		return Kala;
 	}
 
