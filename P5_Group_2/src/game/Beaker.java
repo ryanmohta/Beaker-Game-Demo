@@ -1,3 +1,6 @@
+package game;
+import gameEngine.*;
+
 public class Beaker extends Actor { 
 
 	private double xPos, yPos;
@@ -35,7 +38,7 @@ public class Beaker extends Actor {
 
 	@Override
 	//Moves the beaker from side to side 
-	public void act(long now) {
+	public void act() {
 		
 	};
  }

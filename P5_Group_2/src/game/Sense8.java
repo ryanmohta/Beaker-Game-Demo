@@ -1,3 +1,4 @@
+package game;
 import javafx.scene.image.ImageView;
 
 public class Sense8 {
