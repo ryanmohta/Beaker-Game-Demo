@@ -1,4 +1,10 @@
+import javax.swing.text.Element;
+
 public class Beaker extends Actor { 
+	
+	public Beaker(Element elem) {
+		super(elem);
+	}
 
 	private double xPos, yPos;
 	private double speed;
