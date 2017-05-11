@@ -1,5 +1,6 @@
 
 public class Sense8 {
+	
 	private Object Will;
 	private Object Capheus;
 	private Object Wolfgang;
@@ -37,17 +38,21 @@ public class Sense8 {
 	}
 
 	public Object getWolfgang() {
+		kalagang = true;
 		return Wolfgang;
 	}
 
 	public Object getLito() {
+		litando = true;
 		return Lito;
 	}
 
 	public Object getNomi() {
+		nomanita = true;
 		return Nomi;
 	}
 	public Object getKala() {
+		kalagang = true;
 		return Kala;
 	}
 
