@@ -27,10 +27,10 @@ public abstract class Actor extends ImageView {
 
     /**
      * Creates a new Actor with the specified image and the 
-     * specified start location
-     * @param startX
-     * @param startY
-     * @param image
+     * specified start location.
+     * @param startX the starting x-coordinate.
+     * @param startY the starting y-coordinate.
+     * @param image the image that is assigned to this actor.
      */
 	public Actor(double startX, double startY, Image image) {
         setX(startX);
@@ -38,24 +38,46 @@ public abstract class Actor extends ImageView {
         setImage(image);
     }
 
-    public void move(double dx, double dy) {
+    /**
+     * Moves the actor by the specified coordinates.
+     * @param dx the x-coordinate that the actor moves by.
+     * @param dy the y-coordinate that the actor moves by.
+     */
+	public void move(double dx, double dy) {
         setX(getX() + dx);
         setY(getY() + dy);
     }
 
-    public World getWorld() {
+    /**
+     * Returns the world.
+     * @return the world.
+     */
+	public World getWorld() {
         return (World) getParent();
     }
 
-    public double getWidth() {
+    /**
+     * Returns the width of the actor.
+     * @return the width of the actor.
+     */
+	public double getWidth() {
         return getBoundsInParent().getWidth();
     }
 
-    public double getHeight() {
+    /**
+     * Returns the height of the actor.
+     * @return the height of the actor.
+     */
+	public double getHeight() {
         return getBoundsInParent().getHeight();
     }
 
-    public <A extends Actor> List<A> getIntersectingObjects(Class<A> cls) {
+    /**
+     * Gets all interesting objects of the specified class.
+     * @param cls the class that is checked for.
+     * @return a list of all intersecting objects of the given class.
+     */
+	public <A extends Actor> List<A> getIntersectingObjects(Class<A> cls) {
         ArrayList<A> arrayList = new ArrayList<>();
 
         for(Actor actor : getWorld().getObjects(cls)) {
@@ -67,7 +89,12 @@ public abstract class Actor extends ImageView {
         return arrayList;
     }
 
-    public <A extends Actor> A getOneIntersectingObject(Class<A> cls) {
+    /**
+     * Returns an intersecting object of the particular class.
+     * @param cls the class that is checked for.
+     * @return an intersecting object -- null if none.
+     */
+	public <A extends Actor> A getOneIntersectingObject(Class<A> cls) {
         for(Actor actor : getWorld().getObjects(cls)) {
             if(!this.equals(actor) && actor.intersects(getX(), getY(), getWidth(), getHeight())) {
                 return (A) actor;
@@ -77,6 +104,9 @@ public abstract class Actor extends ImageView {
         return null;
     }
 
-    public abstract void act();
+    /**
+     * This method is called every frame of the game.
+     */
+	public abstract void act();
 
 }
