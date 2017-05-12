@@ -6,19 +6,33 @@ import javafx.scene.image.ImageView;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * {@code Actor} is an abstract base class for general 
+ * sprites in an arcade style game. Because {@code Actor} 
+ * extends {@code ImageView}, you have access to all the 
+ * {@code ImageView} commands such as: <p>
+ * <ul>
+ * 	<li>{@code getX(), getY(), setX(), setY()}</li>
+ * 	<li>{@code setImage()}</li>
+ * 	<li>{@code getFitHeight(), getFitWidth()}</li>
+ * </ul>
+ * 
+ * @author Ryan Mohta
+ *
+ */
 public abstract class Actor extends ImageView {
 
 	/**
-	 * Creates a new Actor with a question mark image 
-	 * and a starting location of (0, 0).
+	 * Creates a new {@code Actor} with a question mark image 
+	 * and a starting location of {@code (0, 0)}.
 	 */
 	public Actor() {
         this(new Image("file:question mark.png"));
     }
 
     /**
-     * Creates a new Actor with the specified image and 
-     * a starting location of (0, 0).
+     * Creates a new {@code Actor} with the specified image and 
+     * a starting location of {@code (0, 0)}.
      * @param image the image that is assigned to this actor.
      */
 	public Actor(Image image) {
@@ -26,7 +40,7 @@ public abstract class Actor extends ImageView {
     }
 
     /**
-     * Creates a new Actor with the specified image and the 
+     * Creates a new {@code Actor} with the specified image and the 
      * specified start location.
      * @param startX the starting x-coordinate.
      * @param startY the starting y-coordinate.
