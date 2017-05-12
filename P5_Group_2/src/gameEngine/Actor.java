@@ -8,15 +8,31 @@ import java.util.List;
 
 public abstract class Actor extends ImageView {
 
-    public Actor() {
+	/**
+	 * Creates a new Actor with a question mark image 
+	 * and a starting location of (0, 0).
+	 */
+	public Actor() {
         this(new Image("file:question mark.png"));
     }
 
-    public Actor(Image image) {
+    /**
+     * Creates a new Actor with the specified image and 
+     * a starting location of (0, 0).
+     * @param image the image that is assigned to this actor.
+     */
+	public Actor(Image image) {
         this(0, 0, image);
     }
 
-    public Actor(double startX, double startY, Image image) {
+    /**
+     * Creates a new Actor with the specified image and the 
+     * specified start location
+     * @param startX
+     * @param startY
+     * @param image
+     */
+	public Actor(double startX, double startY, Image image) {
         setX(startX);
         setY(startY);
         setImage(image);
