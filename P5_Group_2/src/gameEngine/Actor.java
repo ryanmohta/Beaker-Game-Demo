@@ -10,7 +10,7 @@ import java.util.List;
  * {@code Actor} is an abstract base class for general 
  * sprites in an arcade style game. Because {@code Actor} 
  * extends {@code ImageView}, you have access to all the 
- * {@code ImageView} commands such as: <p>
+ * {@code ImageView} commands such as:
  * <ul>
  * 	<li>{@code getX(), getY(), setX(), setY()}</li>
  * 	<li>{@code setImage()}</li>

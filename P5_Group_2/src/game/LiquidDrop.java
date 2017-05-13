@@ -18,21 +18,13 @@ public class LiquidDrop extends Actor {
     private double speed;
 
     /**
-     * Creates a new {@code LiquidDrop} object with starting
-     * coordinates at {@code (0, 0)} and starting speed of 10.
+     * Creates a new {@code LiquidDrop} object with specified
+     * starting coordinates and a speed of {@code 5}.
+     * @param startX the starting x-coordinate
+     * @param startY the starting y-coordinate
      */
-    public LiquidDrop(){
-        this(10);
-    }
-
-    /**
-     * Creates a new {@code LiquidDrop} object with starting
-     * coordinates at {@code (0, 0)} and specified starting
-     * speed.
-     * @param speed the starting speed
-     */
-    public LiquidDrop(double speed) {
-        this(0, 0, speed);
+    public LiquidDrop(double startX, double startY) {
+        this(startX, startY, 5);
     }
 
     /**
@@ -68,6 +60,6 @@ public class LiquidDrop extends Actor {
      */
     @Override
     public void act() {
-
+        //method stub
     }
 }

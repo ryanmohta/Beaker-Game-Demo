@@ -1,5 +1,6 @@
 package game;
 import gameEngine.*;
+import javafx.scene.image.Image;
 
 /**
  * {@code Beaker} is an {@code Actor} that is a 
@@ -12,65 +13,29 @@ import gameEngine.*;
  */
 public class Beaker extends Actor { 
 
-	private double xPos, yPos;
 	private double speed;
-	
+
 	/**
-	 * Creates a new {@code Beaker} with the specified 
-	 * starting coordinates.
+	 * Creates a new {@code Beaker} with the specified
+	 * starting coordinates and speed of {@code 5}.
 	 * @param xPos the starting x-coordinate
 	 * @param yPos the starting y-coordinate
 	 */
 	public Beaker(double xPos, double yPos) {
 		this(xPos, yPos, 5);
 	}
-	
+
 	/**
-	 * Creates a new {@code Beaker} with the specified 
+	 * Creates a new {@code Beaker} with the specified
 	 * starting coordinates and speed.
-	 * @param xPos the starting x-coordinate
-	 * @param yPos the starting y-coordinate
+	 * @param startX the starting x-coordinate
+	 * @param startY the starting y-coordinate
 	 * @param speed the speed of the beaker
 	 */
-	public Beaker(double xPos, double yPos, double speed) {
-		this.xPos = xPos;
-		this.yPos = yPos;
+	public Beaker(double startX, double startY, double speed) {
+		super(startX, startY, new Image("file:///images/beaker.png"));
 		this.speed = speed;
 	}
-
-	/**
-	 * Sets the class instance variable {@code xPos} to the
-	 * parameter {@code newPos}.
-	 * @param newPos the new x-coordinate of this beaker.
-	 */
-	public void setXPos(double newPos) {
-		xPos = newPos;
-	};
-
-	/**
-	 * Returns the x-position of the {@code Beaker}.
-	 * @return the x-position of the beaker.
-	 */
-	public double getXPos() {
-		return xPos;
-	};
-
-	/**
-	 * Sets the class instance variable {@code yPos} to the
-	 * parameter {@code newPos}.
-	 * @param newPos the new y-coordinate of this beaker.
-	 */
-	public void setYPos(double newPos) {
-		yPos = newPos;
-	};
-
-	/**
-	 * Returns the y-position of the {@code Beaker}.
-	 * @return the y-position of the beaker.
-	 */
-	public double getYPos() {
-		return yPos;
-	};
 
 	/**
 	 * Sets the class instance variable {@code speed} to the
@@ -94,6 +59,6 @@ public class Beaker extends Actor {
 	 */
 	@Override
 	public void act() {
-		
+		//method stub
 	};
  }
