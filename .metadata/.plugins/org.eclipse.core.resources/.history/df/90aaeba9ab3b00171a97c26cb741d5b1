@@ -76,8 +76,7 @@ public abstract class World extends Pane {
      * @param cls the specified class to be searched.
      * @return a {@code List} of all actors to be removed.
      */
-    @SuppressWarnings("unchecked")
-	public <A extends Actor> List<A> getObjects(Class<A> cls) {
+    public <A extends Actor> List<A> getObjects(Class<A> cls) {
         ArrayList<A> arrayList = new ArrayList<>();
 
         for(Node n : getChildren()) {

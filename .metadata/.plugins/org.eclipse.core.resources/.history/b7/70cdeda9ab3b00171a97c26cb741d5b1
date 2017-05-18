@@ -91,7 +91,6 @@ public abstract class Actor extends ImageView {
      * @param cls the class that is checked for.
      * @return a list of all intersecting objects of the given class.
      */
-	@SuppressWarnings("unchecked")
 	public <A extends Actor> List<A> getIntersectingObjects(Class<A> cls) {
         ArrayList<A> arrayList = new ArrayList<>();
 
@@ -109,7 +108,6 @@ public abstract class Actor extends ImageView {
      * @param cls the class that is checked for.
      * @return an intersecting object -- null if none.
      */
-	@SuppressWarnings("unchecked")
 	public <A extends Actor> A getOneIntersectingObject(Class<A> cls) {
         for(Actor actor : getWorld().getObjects(cls)) {
             if(!this.equals(actor) && actor.intersects(getX(), getY(), getWidth(), getHeight())) {

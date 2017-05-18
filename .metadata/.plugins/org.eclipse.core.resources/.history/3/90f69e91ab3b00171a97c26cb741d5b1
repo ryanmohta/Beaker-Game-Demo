@@ -62,12 +62,4 @@ public class LiquidDrop extends Actor {
     public void act() {
         //method stub
     }
-
-	public double getSpeed() {
-		return speed;
-	}
-
-	public void setSpeed(double speed) {
-		this.speed = speed;
-	}
 }
