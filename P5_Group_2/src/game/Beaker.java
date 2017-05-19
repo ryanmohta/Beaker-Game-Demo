@@ -1,6 +1,5 @@
 package game;
 import gameEngine.*;
-import javafx.animation.AnimationTimer;
 import javafx.scene.image.Image;
 
 /**
@@ -15,10 +14,7 @@ import javafx.scene.image.Image;
 public class Beaker extends Actor { 
 
 	private double speed;
-	private double startTime;
-	private boolean goToRightEdge = true;
-	private long currTime;
-	private TimerHandler clock;
+	private boolean toRight = true;
 
 	/**
 	 * Creates a new {@code Beaker} with the specified
@@ -59,50 +55,29 @@ public class Beaker extends Actor {
 		return speed;
 	}
 	
-//	/**
-//	 * Moves the beaker from left to right.
-//	 */
-//	@Override
-//	public void act() {
-//		clock = new TimerHandler();
-//		startTime = System.nanoTime();
-//		currTime = System.currentTimeMillis();
-//		clock.start();	
-//	}
+	/**
+	 * Changes the current direction of the {@code Beaker}.
+	 */
+	public void changeDirection() {
+		toRight = !toRight;
+	}
+	
 	
 	/**
-	 * Moves the beaker from left to right.
+	 * Moves the {@code Beaker} from left to right, or right to left if it hits 
+	 * the right wall.
 	 */
 	@Override
 	public void act() {
-		move(1, 0);
-	}
-
-
-	private class TimerHandler extends AnimationTimer {
-		@Override
-		public void handle(long now) {
-			long onesec = 1000 * 1000;
-			if (((now - startTime)) > onesec) {
-				startTime = now;	
-				if (getX() == 0) {
-					goToRightEdge = true;
-				} else if (getX() == getWorld().getWidth()) {
-					goToRightEdge = false;
-				}
-				
-				if (goToRightEdge) 
-					move(5,0);
-				else
-					move(-5,0);
-				
-				currTime = System.currentTimeMillis();
-				if (currTime > 300000)
-					clock.stop();
-			}
+		if(toRight) {
+			move(speed, 0);
 		}
-	}	
-
+		else move(-speed, 0);
+		
+		if(getX() <= 0 || getX() + getWidth() >= getWorld().getWidth()) {
+			changeDirection();
+		}
+	}
 }
 	
 
