@@ -28,7 +28,7 @@ public class Dropper extends Actor implements MouseListener {
 
 	@Override
 	public void act() {
-		// TODO Auto-generated method stub
+		
 		
 	}
 
@@ -40,7 +40,8 @@ public class Dropper extends Actor implements MouseListener {
 
 	@Override
 	public void mousePressed(java.awt.event.MouseEvent e) {
-		// TODO Auto-generated method stub
+		this.setXPos(e.getX());
+		this.setYPos(e.getY());
 		
 	}
 
