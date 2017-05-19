@@ -31,7 +31,8 @@ public class Dropper extends Actor implements MouseListener {
 
 	@Override
 	public void act() {
-		//method not needed	
+		//method not needed
+		
 	}
 
 	@Override
@@ -49,16 +50,19 @@ public class Dropper extends Actor implements MouseListener {
 
 	@Override
 	public void mouseReleased(java.awt.event.MouseEvent e) {
-		//method not needed
+		
+		
 	}
 
 	@Override
 	public void mouseEntered(java.awt.event.MouseEvent e) {
-		//method not needed	
+		// TODO Auto-generated method stub
+		
 	}
 
 	@Override
 	public void mouseExited(java.awt.event.MouseEvent e) {
-		//method not needed	
+		// TODO Auto-generated method stub
+		
 	}
 }

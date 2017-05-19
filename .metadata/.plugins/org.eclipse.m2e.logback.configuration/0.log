@@ -38,3 +38,6 @@
 2017-05-19 01:57:08,925 [Worker-0] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
 2017-05-19 01:57:10,752 [Thread-8] ERROR org.eclipse.jgit.util.FS - fatal: Could not switch to '/Applications/Xcode.app/Contents/Developer/usr/etc/': No such file or directory
 
+2017-05-19 12:17:59,996 [Worker-1] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2017-05-19 12:18:00,233 [Thread-8] ERROR org.eclipse.jgit.util.FS - fatal: Could not switch to '/Applications/Xcode.app/Contents/Developer/usr/etc/': No such file or directory
+

@@ -3,7 +3,6 @@ package gameEngine;
 import game.*;
 import javafx.application.Application;
 import javafx.scene.Scene;
-import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
 public class Game extends Application {
@@ -51,10 +50,7 @@ public class Game extends Application {
 		stage.setScene(scene);
 		stage.setTitle("Beaker Game");
 		world.add(new Beaker(400,400));
-		world.add(new Dropper(0,0));
-		ImageView dropper = new ImageView("file:///images/Dropper.png));");
-		dropper.setX(400);
-		dropper.setY(100);
+		world.add(new Dropper(400,100));
 		world.start();
 		stage.show();
 	}
