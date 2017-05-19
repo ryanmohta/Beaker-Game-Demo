@@ -2,18 +2,19 @@ package game;
 
 import java.awt.event.MouseListener;
 import gameEngine.Actor;
+import javafx.scene.image.Image;
 
 public class Dropper extends Actor implements MouseListener {
 	private double XPos, YPos;
 
 	public Dropper(int xpos, int ypos){
 		super(xpos, ypos, new Image("file:///images/Dropper.png));"));
-		this.xPos = xpos;
-		this.yPos = ypos;
+		this.XPos = xpos;
+		this.YPos = ypos;
 	}
 	
 	public void setXPos(double newpos) {
-		xPos = newpos;
+		XPos = newpos;
 	}
 
 	public double getXPos() {
@@ -21,7 +22,7 @@ public class Dropper extends Actor implements MouseListener {
 	}
 
 	public void setYPos(double newpos) {
-		yPos = newpos;
+		YPos = newpos;
 	}
 
 	public double getYPos() {
