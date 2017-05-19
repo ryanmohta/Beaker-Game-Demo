@@ -44,12 +44,7 @@ public class Game extends Application {
 
 	@Override
 	public void start(Stage stage) throws Exception {
-		
-		
-	}
-	
-	/**
-	    BorderPane root = new BorderPane();
+		BorderPane root = new BorderPane();
 		HBox top = new HBox();
 		root.setTop(top);
 		
@@ -66,7 +61,7 @@ public class Game extends Application {
 		stage.setScene(scene);
 		stage.show();
 		
-	 */
+	}
 	
 	public static void main (String [] args) {
 		launch(args);
