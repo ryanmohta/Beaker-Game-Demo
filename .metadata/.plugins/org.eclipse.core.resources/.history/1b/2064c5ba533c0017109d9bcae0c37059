@@ -20,8 +20,6 @@ public class Beaker extends Actor {
 	private double startTime;
 	private boolean goToRightEdge = true;
 	private boolean goToLeftEdge = false;
-	private long currTime;
-	private TimerHandler clock;
 
 	/**
 	 * Creates a new {@code Beaker} with the specified
@@ -73,9 +71,8 @@ public class Beaker extends Actor {
 	 */
 	@Override
 	public void act() {
-		clock = new TimerHandler();
+		TimerHandler clock = new TimerHandler();
 		startTime = System.nanoTime();
-		currTime = System.currentTimeMillis();
 		clock.start();	
 	}
 
@@ -97,10 +94,6 @@ public class Beaker extends Actor {
 					moveRight(5,0);
 				else
 					moveLeft(5,0);
-				
-				currTime = System.currentTimeMillis();
-				if (currTime > 300000)
-					clock.stop();
 			}
 		}
 	}	
