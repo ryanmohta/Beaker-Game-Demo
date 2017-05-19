@@ -1,6 +1,5 @@
 package game;
 import gameEngine.*;
-import javafx.animation.AnimationTimer;
 import javafx.scene.image.Image;
 
 /**
@@ -17,9 +16,6 @@ public class Beaker extends Actor {
 	private double speed;
 	private double xPos;
 	private double yPos;
-	private double startTime;
-	private boolean goToRightEdge = true;
-	private boolean goToLeftEdge = false;
 
 	/**
 	 * Creates a new {@code Beaker} with the specified
@@ -60,44 +56,14 @@ public class Beaker extends Actor {
 	 */
 	public double getSpeed() {
 		return speed;
-	}
-	
-	public double getXPos() {
-		return xPos;
-	}
+	};
 
 	/**
 	 * Moves the beaker from left to right.
 	 */
 	@Override
 	public void act() {
-		TimerHandler clock = new TimerHandler();
-		startTime = System.nanoTime();
-		clock.start();	
+		move(5,5);
+		
 	}
-
-	private class TimerHandler extends AnimationTimer {
-		@Override
-		public void handle(long now) {
-			long onesec = 1000 * 1000;
-			if (((now - startTime)) > onesec) {
-				startTime = now;	
-				if (getXPos() == 0) {
-					goToRightEdge = true;
-					goToLeftEdge = false;
-				} else if (getXPos() == 800) {
-					goToRightEdge = false;
-					goToLeftEdge = true;
-				}
-				
-				if (goToRightEdge) 
-					moveRight(5,0);
-				else
-					moveLeft(5,0);
-			}
-		}
-	}	
-
-}
-	
-
+ }

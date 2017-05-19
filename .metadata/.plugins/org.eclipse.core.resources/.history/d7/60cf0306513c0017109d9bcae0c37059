@@ -1,6 +1,5 @@
 package game;
 import gameEngine.*;
-import javafx.animation.AnimationTimer;
 import javafx.scene.image.Image;
 
 /**
@@ -15,11 +14,6 @@ import javafx.scene.image.Image;
 public class Beaker extends Actor { 
 
 	private double speed;
-	private double xPos;
-	private double yPos;
-	private double startTime;
-	private boolean goToRightEdge = true;
-	private boolean goToLeftEdge = false;
 
 	/**
 	 * Creates a new {@code Beaker} with the specified
@@ -29,8 +23,6 @@ public class Beaker extends Actor {
 	 */
 	public Beaker(double xPos, double yPos) {
 		this(xPos, yPos, 5);
-		this.xPos = xPos;
-		this.yPos = yPos;
 	}
 
 	/**
@@ -41,7 +33,7 @@ public class Beaker extends Actor {
 	 * @param speed the speed of the beaker
 	 */
 	public Beaker(double startX, double startY, double speed) {
-		super(startX, startY, new Image("file:///images/Beaker.png"));
+		super(startX, startY, new Image("file:///images/beaker.png"));
 		this.speed = speed;
 	}
 
@@ -60,44 +52,13 @@ public class Beaker extends Actor {
 	 */
 	public double getSpeed() {
 		return speed;
-	}
-	
-	public double getXPos() {
-		return xPos;
-	}
+	};
 
 	/**
 	 * Moves the beaker from left to right.
 	 */
 	@Override
 	public void act() {
-		TimerHandler clock = new TimerHandler();
-		startTime = System.nanoTime();
-		clock.start();	
-	}
-
-	private class TimerHandler extends AnimationTimer {
-		@Override
-		public void handle(long now) {
-			long onesec = 1000 * 1000;
-			if (((now - startTime)) > onesec) {
-				startTime = now;	
-				if (getXPos() == 0) {
-					goToRightEdge = true;
-					goToLeftEdge = false;
-				} else if (getXPos() == 800) {
-					goToRightEdge = false;
-					goToLeftEdge = true;
-				}
-				
-				if (goToRightEdge) 
-					moveRight(5,0);
-				else
-					moveLeft(5,0);
-			}
-		}
-	}	
-
-}
-	
-
+		
+	};
+ }

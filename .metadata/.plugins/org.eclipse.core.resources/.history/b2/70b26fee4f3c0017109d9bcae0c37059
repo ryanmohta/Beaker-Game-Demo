@@ -40,9 +40,9 @@ public class Game extends Application {
 			return true;
 		return false;
 	}
-	
 
 	@Override
+	//GUI Elements including a Stage, Scene, Slider, and Label (which we'll add later)
 	public void start(Stage stage) throws Exception {
 		BorderPane root = new BorderPane();
 		HBox top = new HBox();
@@ -54,8 +54,6 @@ public class Game extends Application {
 		score.setFont(font);
 		failedDrops.setFont(font);
 		top.getChildren().addAll(score, failedDrops);
-		
-		
 		
 		Scene scene = new Scene(root,800,600);
 		stage.setScene(scene);
