@@ -47,6 +47,7 @@ public class Game extends Application {
 		stage.setTitle("Beaker Game");
 		world.add(new Beaker(0,600));
 		world.add(new Dropper(0,0));
+		world.start();
 		stage.show();
 	}
 	
