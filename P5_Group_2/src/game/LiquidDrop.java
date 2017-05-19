@@ -57,7 +57,10 @@ public class LiquidDrop extends Actor {
         if(isTouchingFloor()) {
         	getWorld().remove(this);
         }
-        
+        else if(getOneIntersectingObject(Beaker.class) != null) {
+        	getWorld().incrementScore();
+        	getWorld().remove(this);
+        }
     }
 
 	public double getGravity() {

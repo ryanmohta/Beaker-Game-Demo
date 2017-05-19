@@ -27,6 +27,10 @@ public class Game extends Application {
 		return score;
 	}
 	
+	public void incrementScore() {
+		score++;
+	}
+	
 	public int getNumFailed() {
 		return numFailed;
 	}

@@ -21,6 +21,8 @@ import java.util.List;
  */
 public abstract class World extends Pane {
     private AnimationTimer timer;
+    
+    private int score = 0;
 
     /**
      * Creates a new {@code World} and starts the {@code AnimationTimer}
@@ -87,6 +89,14 @@ public abstract class World extends Pane {
         }
 
         return arrayList;
+    }
+    
+    public int getScore() {
+    	return score;
+    }
+    
+    public void incrementScore() {
+    	score++;
     }
 
     /**
