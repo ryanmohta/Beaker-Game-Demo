@@ -6,12 +6,14 @@ import gameEngine.Actor;
 public class Dropper extends Actor implements MouseListener {
 	private double XPos, YPos;
 
-	public void clicked() {
-		
+	public Dropper(int xpos, int ypos){
+		super(xpos, ypos, new Image("file:///images/Dropper.png));"));
+		this.xPos = xpos;
+		this.yPos = ypos;
 	}
-
+	
 	public void setXPos(double newpos) {
-		
+		xPos = newpos;
 	}
 
 	public double getXPos() {
@@ -19,7 +21,7 @@ public class Dropper extends Actor implements MouseListener {
 	}
 
 	public void setYPos(double newpos) {
-		
+		yPos = newpos;
 	}
 
 	public double getYPos() {
