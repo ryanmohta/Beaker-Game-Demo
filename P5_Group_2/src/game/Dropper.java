@@ -28,13 +28,14 @@ public class Dropper extends Actor implements MouseListener {
 
 	@Override
 	public void act() {
-		
+		//method not needed
 		
 	}
 
 	@Override
 	public void mouseClicked(java.awt.event.MouseEvent e) {
-		// TODO Auto-generated method stub
+		LiquidDrop ldrop = new LiquidDrop(e.getX(), e.getY(), 5);
+		ldrop.fall();
 		
 	}
 
@@ -42,12 +43,11 @@ public class Dropper extends Actor implements MouseListener {
 	public void mousePressed(java.awt.event.MouseEvent e) {
 		this.setXPos(e.getX());
 		this.setYPos(e.getY());
-		
 	}
 
 	@Override
 	public void mouseReleased(java.awt.event.MouseEvent e) {
-		// TODO Auto-generated method stub
+		
 		
 	}
 
