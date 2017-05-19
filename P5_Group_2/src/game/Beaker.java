@@ -15,8 +15,6 @@ import javafx.scene.image.Image;
 public class Beaker extends Actor { 
 
 	private double speed;
-	private double xPos;
-	private double yPos;
 	private double startTime;
 	private boolean goToRightEdge = true;
 	private boolean goToLeftEdge = false;
@@ -31,8 +29,6 @@ public class Beaker extends Actor {
 	 */
 	public Beaker(double xPos, double yPos) {
 		this(xPos, yPos, 5);
-		this.xPos = xPos;
-		this.yPos = yPos;
 	}
 
 	/**
@@ -64,10 +60,6 @@ public class Beaker extends Actor {
 		return speed;
 	}
 	
-	public double getXPos() {
-		return xPos;
-	}
-
 	/**
 	 * Moves the beaker from left to right.
 	 */
@@ -85,10 +77,10 @@ public class Beaker extends Actor {
 			long onesec = 1000 * 1000;
 			if (((now - startTime)) > onesec) {
 				startTime = now;	
-				if (getXPos() == 0) {
+				if (getX() == 0) {
 					goToRightEdge = true;
 					goToLeftEdge = false;
-				} else if (getXPos() == 800) {
+				} else if (getX() == 800) {
 					goToRightEdge = false;
 					goToLeftEdge = true;
 				}
