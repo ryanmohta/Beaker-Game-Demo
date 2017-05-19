@@ -6,6 +6,7 @@ import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
+import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 
 /**
@@ -48,6 +49,15 @@ public class BeakerWorld extends World {
 		if(currentActCount >= actCount + 1) {
 			actCount = currentActCount;
 		}
+		
+		setOnKeyPressed(new EventHandler<KeyEvent>() {
+			@Override
+			public void handle(KeyEvent event) {
+				if(event.getCode() == KeyCode.SPACE) {
+					add(new LiquidDrop(400, 100));
+				}
+			};
+		});
 		
 	}
 

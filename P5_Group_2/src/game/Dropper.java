@@ -38,7 +38,7 @@ public class Dropper extends Actor implements MouseListener {
 	@Override
 	public void mouseClicked(java.awt.event.MouseEvent e) {
 		LiquidDrop ldrop = new LiquidDrop(e.getX(), e.getY(), 5);
-		ldrop.fall();
+		ldrop.act();
 		
 	}
 

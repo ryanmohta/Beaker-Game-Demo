@@ -15,11 +15,11 @@ import javafx.scene.image.Image;
  */
 public class LiquidDrop extends Actor {
 
-    private double speed;
+    private double gravity;
 
     /**
      * Creates a new {@code LiquidDrop} object with specified
-     * starting coordinates and a speed of {@code 5}.
+     * starting coordinates and a gravity of {@code 5}.
      * @param startX the starting x-coordinate
      * @param startY the starting y-coordinate
      */
@@ -29,22 +29,14 @@ public class LiquidDrop extends Actor {
 
     /**
      * Creates a new {@code LiquidDrop} object with specified
-     * starting coordinates and speed.
+     * starting coordinates and gravity.
      * @param startX the starting x-coordinate
      * @param startY the starting y-coordinate
-     * @param speed the starting speed
+     * @param gravity the gravity to which this drop falls
      */
-    public LiquidDrop(double startX, double startY, double speed) {
-        super(startX, startY, new Image("file:///images/beaker.png"));
-        this.speed = speed;
-    }
-
-    /**
-     * Allows for the liquid drop to fall, resetting the {@code x} and
-     * {@code y} positions every millisecond.
-     */
-    public void fall() {
-        
+    public LiquidDrop(double startX, double startY, double gravity) {
+        super(startX, startY, new Image("file:images/drop.png"));
+        this.gravity = gravity;
     }
 
     /**
@@ -52,22 +44,27 @@ public class LiquidDrop extends Actor {
      * @return if this liquid drop is touching the floor
      */
     public boolean isTouchingFloor() {
-        return true; //will fix later
+        return getY() + getHeight() >= getWorld().getHeight();
     }
 
     /**
-     * Called every frame of the program lifecycle.
+     * Allows for the liquid drop to fall, resetting the 
+     * {@code y} position every millisecond.
      */
     @Override
     public void act() {
-        //method stub
+        move(0, gravity);
+        if(isTouchingFloor()) {
+        	getWorld().remove(this);
+        }
+        
     }
 
-	public double getSpeed() {
-		return speed;
+	public double getGravity() {
+		return gravity;
 	}
 
-	public void setSpeed(double speed) {
-		this.speed = speed;
+	public void setGravity(double gravity) {
+		this.gravity = gravity;
 	}
 }
