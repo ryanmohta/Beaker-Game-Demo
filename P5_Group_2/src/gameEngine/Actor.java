@@ -57,14 +57,9 @@ public abstract class Actor extends ImageView {
      * @param dx the x-coordinate that the actor moves by.
      * @param dy the y-coordinate that the actor moves by.
      */
-	public void moveRight(double dx, double dy) {
+	public void move(double dx, double dy) {
         setX(getX() + dx);
         setY(getY() + dy);
-    }
-	
-	public void moveLeft(double dx, double dy) {
-        setX(getX() - dx);
-        setY(getY() - dy);
     }
 
     /**

@@ -86,9 +86,9 @@ public class Beaker extends Actor {
 				}
 				
 				if (goToRightEdge) 
-					moveRight(5,0);
+					move(5,0);
 				else
-					moveLeft(5,0);
+					move(-5,0);
 				
 				currTime = System.currentTimeMillis();
 				if (currTime > 300000)
