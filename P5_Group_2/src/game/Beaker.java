@@ -59,16 +59,25 @@ public class Beaker extends Actor {
 		return speed;
 	}
 	
+//	/**
+//	 * Moves the beaker from left to right.
+//	 */
+//	@Override
+//	public void act() {
+//		clock = new TimerHandler();
+//		startTime = System.nanoTime();
+//		currTime = System.currentTimeMillis();
+//		clock.start();	
+//	}
+	
 	/**
 	 * Moves the beaker from left to right.
 	 */
 	@Override
 	public void act() {
-		clock = new TimerHandler();
-		startTime = System.nanoTime();
-		currTime = System.currentTimeMillis();
-		clock.start();	
+		move(1, 0);
 	}
+
 
 	private class TimerHandler extends AnimationTimer {
 		@Override
