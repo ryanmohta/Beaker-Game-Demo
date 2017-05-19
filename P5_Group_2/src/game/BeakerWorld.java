@@ -47,7 +47,6 @@ public class BeakerWorld extends World {
 		int currentActCount = (int)(now / 10E8);
 		if(currentActCount >= actCount + 1) {
 			actCount = currentActCount;
-			System.out.println(++secondCount + " "); //tests if it works correctly
 		}
 		
 	}
