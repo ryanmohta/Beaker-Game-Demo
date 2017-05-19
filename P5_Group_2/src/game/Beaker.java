@@ -17,7 +17,6 @@ public class Beaker extends Actor {
 	private double speed;
 	private double startTime;
 	private boolean goToRightEdge = true;
-	private boolean goToLeftEdge = false;
 	private long currTime;
 	private TimerHandler clock;
 
@@ -39,7 +38,7 @@ public class Beaker extends Actor {
 	 * @param speed the speed of the beaker
 	 */
 	public Beaker(double startX, double startY, double speed) {
-		super(startX, startY, new Image("file:///images/Beaker.png"));
+		super(startX, startY, new Image("file:images/beaker.png"));
 		this.speed = speed;
 	}
 
@@ -79,10 +78,8 @@ public class Beaker extends Actor {
 				startTime = now;	
 				if (getX() == 0) {
 					goToRightEdge = true;
-					goToLeftEdge = false;
-				} else if (getX() == 800) {
+				} else if (getX() == getWorld().getWidth()) {
 					goToRightEdge = false;
-					goToLeftEdge = true;
 				}
 				
 				if (goToRightEdge) 
