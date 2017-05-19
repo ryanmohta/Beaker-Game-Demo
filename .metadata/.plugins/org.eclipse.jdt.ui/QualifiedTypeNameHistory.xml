@@ -13,4 +13,6 @@
 <fullyQualifiedTypeName name="javafx.scene.input.MouseEvent"/>
 <fullyQualifiedTypeName name="java.awt.event.MouseListener"/>
 <fullyQualifiedTypeName name="javafx.animation.AnimationTimer"/>
+<fullyQualifiedTypeName name="game.BeakerWorld"/>
+<fullyQualifiedTypeName name="game.Beaker"/>
 </qualifiedTypeNameHistroy>
