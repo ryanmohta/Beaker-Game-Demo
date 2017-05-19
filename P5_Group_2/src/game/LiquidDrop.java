@@ -44,7 +44,7 @@ public class LiquidDrop extends Actor {
      * {@code y} positions every millisecond.
      */
     public void fall() {
-        //method stub
+        
     }
 
     /**
