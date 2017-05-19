@@ -1,0 +1,33 @@
+package game;
+
+public class Dropper extends Actor {
+	private double XPos, YPos;
+
+	//When mouseEventClicked happens, the dropper will release a liquidDrop(done in Game
+	class)
+	void clicked();
+
+	////Sets the XPos instance variable to newpos if newpos is a position on the screen
+	public void setXPos(double newpos);
+
+	@return the private instance variable XPos
+	public double getXPos();
+
+	//Sets the YPos instance variable to newpos if newpos is a position on the screen
+	public void setYPos(double newpos);
+
+	@return the private instance variable YPos
+	public double getYPos();
+
+	@Override
+	//Releases a drop from the dropper once clicked
+	void handle(MouseEvent e);
+
+@Override
+	//Allows for the dropper to move using the mouse
+	void handle(MouseEvent e);
+
+	@Override
+	//Allows for movement of the dropper
+	void act(long now);
+}
