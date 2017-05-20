@@ -20,7 +20,7 @@ hope will impress.
 <p>I love APCS and Sense8, but mostly Sense8.</p>
 
 <h3>Oleon Hariharan</h3>
-<p>I love Lebron James and Mr. McLeod, but mostly Lebron James.</p>
+<p>I love LeBron James and Mr. McLeod, but mostly LeBron James.</p>
 
 <h3>Ryan Mohta</h3>
 <p>I love Mr. McLeod and Karel <i>(when it's pronounced right)</i>, 
