@@ -55,7 +55,7 @@ public class BeakerWorld extends World {
 			@Override
 			public void handle(KeyEvent event) {
 				if(event.getCode() == KeyCode.SPACE) {
-					add(new LiquidDrop(400, 100));
+					add(new LiquidDrop(400, 50));
 				}
 			};
 		});
