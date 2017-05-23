@@ -4,6 +4,9 @@ import game.*;
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
+import javafx.scene.control.Menu;
+import javafx.scene.control.MenuBar;
+import javafx.scene.control.MenuItem;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.text.Font;
@@ -15,6 +18,8 @@ public class Game extends Application implements ModelListener {
 	
 	private boolean mode; // true = custom, false = express
 	private int numFailed; //number of drops that hit the floor
+	private MenuItem express;
+	private MenuItem custom;
 	
 	private Text scoreboard; //the scoreboard (obviously)
 
@@ -28,10 +33,17 @@ public class Game extends Application implements ModelListener {
 		
 		scoreboard = new Text("Score: 0");
 		scoreboard.setFont(new Font(20));
+		MenuBar menubar = new MenuBar();
+		Menu file = new Menu("File");
+		express = new MenuItem("Express Mode");
+		custom = new MenuItem("Custom Mode");
+		file.getItems().addAll(express, custom);
+		menubar.getMenus().add(file);
 		HBox hB = new HBox(20, scoreboard);
 		hB.setPadding(new Insets(20, 50, 20, 700));
-		bP.setTop(hB);
-		
+		bP.setBottom(hB);
+		bP.setTop(menubar);
+
 		Scene scene = new Scene(bP, 800, 600);
 		stage.setScene(scene);
 		stage.setTitle("Beaker Game");
