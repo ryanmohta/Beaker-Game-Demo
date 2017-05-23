@@ -14,6 +14,8 @@ public class Game extends Application {
 	private boolean mode; // true = custom, false = express
 	private int numFailed; //number of drops that hit the floor
 	private int score; //the number of drops that successfully land in the beaker
+	
+	private Text scoreboard; //the scoreboard (obviously)
 
 	public void setMode(boolean newmode){
 		mode = newmode;
@@ -53,7 +55,7 @@ public class Game extends Application {
 		BeakerWorld world = new BeakerWorld();
 		BorderPane bP = new BorderPane(world);
 		
-		Text scoreboard = new Text("Score: 0");
+		scoreboard = new Text("Score: 0");
 		scoreboard.setFont(new Font(20));
 		HBox hB = new HBox(20, scoreboard);
 		hB.setPadding(new Insets(20, 50, 20, 700));
