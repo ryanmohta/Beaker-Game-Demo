@@ -2,6 +2,7 @@ package gameEngine;
 
 import game.*;
 import javafx.application.Application;
+import javafx.beans.property.IntegerProperty;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
@@ -13,7 +14,7 @@ import javafx.stage.Stage;
 public class Game extends Application {
 	private boolean mode; // true = custom, false = express
 	private int numFailed; //number of drops that hit the floor
-	private int score; //the number of drops that successfully land in the beaker
+	private IntegerProperty score; //the number of drops that successfully land in the beaker
 	
 	private Text scoreboard; //the scoreboard (obviously)
 
@@ -27,15 +28,15 @@ public class Game extends Application {
 
 	public void setScore(int newscore) {
 		if (newscore >= 0) 
-			score = newscore;
+			score.set(newscore);
 	}
 
 	public int getScore() {
-		return score;
+		return score.get();
 	}
 	
 	public void incrementScore() {
-		score++;
+		score.set(score.get() + 1);
 	}
 	
 	public int getNumFailed() {
