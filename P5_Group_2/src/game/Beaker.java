@@ -15,10 +15,13 @@ public class Beaker extends Actor {
 
 	private double speed;
 	private boolean toRight = true;
+	private final double ACCELERATION = 0.001; //the amount the beaker speeds
+											//up every act method
 
 	/**
 	 * Creates a new {@code Beaker} with the specified
-	 * starting coordinates and speed of {@code 5}.
+	 * starting coordinates and starting speed of 
+	 * {@code 5}.
 	 * @param xPos the starting x-coordinate
 	 * @param yPos the starting y-coordinate
 	 */
@@ -28,14 +31,14 @@ public class Beaker extends Actor {
 
 	/**
 	 * Creates a new {@code Beaker} with the specified
-	 * starting coordinates and speed.
+	 * starting coordinates and starting speed.
 	 * @param startX the starting x-coordinate
 	 * @param startY the starting y-coordinate
-	 * @param speed the speed of the beaker
+	 * @param startSpeed the starting speed of the beaker
 	 */
-	public Beaker(double startX, double startY, double speed) {
+	public Beaker(double startX, double startY, double startSpeed) {
 		super(startX, startY, new Image("file:images/beaker.png"));
-		this.speed = speed;
+		this.speed = startSpeed;
 	}
 
 	/**
@@ -70,9 +73,9 @@ public class Beaker extends Actor {
 	@Override
 	public void act() {
 		if(toRight) {
-			move(speed, 0);
+			move(speed += ACCELERATION, 0);
 		}
-		else move(-speed, 0);
+		else move(-(speed += ACCELERATION), 0);
 		
 		if(getX() <= 0 || getX() + getWidth() >= getWorld().getWidth()) {
 			changeDirection();

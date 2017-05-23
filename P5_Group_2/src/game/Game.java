@@ -1,6 +1,5 @@
-package gameEngine;
+package game;
 
-import game.*;
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
