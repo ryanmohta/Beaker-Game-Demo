@@ -42,7 +42,7 @@ public class Game extends Application implements ModelListener {
 		scoreboard = new Text("Score: 0");
 		scoreboard.setFont(new Font(20));
 		HBox hB = new HBox(20, scoreboard);
-		hB.setPadding(new Insets(20, 50, 20, 700));
+		hB.setPadding(new Insets(20));
 		bP.setBottom(hB);
 		bP.setTop(menubar);
 
