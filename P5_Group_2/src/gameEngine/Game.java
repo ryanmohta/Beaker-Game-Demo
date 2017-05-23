@@ -2,8 +2,13 @@ package gameEngine;
 
 import game.*;
 import javafx.application.Application;
+import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.HBox;
+import javafx.scene.text.Font;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 public class Game extends Application {
@@ -45,16 +50,21 @@ public class Game extends Application {
 	
 
 	@Override
-	public void start(Stage stage) throws Exception {
+	public void start(Stage stage) throws Exception {		
 		BeakerWorld world = new BeakerWorld();
-		Scene scene = new Scene(world, 800, 600);
+		BorderPane bP = new BorderPane(world);
+		
+		Text scoreboard = new Text("Score: 0");
+		scoreboard.setFont(new Font(20));
+		HBox hB = new HBox(20, scoreboard);
+		hB.setPadding(new Insets(20, 50, 20, 700));
+		bP.setTop(hB);
+		
+		Scene scene = new Scene(bP, 800, 600);
 		stage.setScene(scene);
 		stage.setTitle("Beaker Game");
-		world.add(new Beaker(400,400));
-		world.add(new Dropper(0,0));
-		ImageView dropper = new ImageView("file:///images/Dropper.png));");
-		dropper.setX(400);
-		dropper.setY(100);
+		world.add(new Beaker(400,350));
+		
 		world.start();
 		stage.show();
 	}
