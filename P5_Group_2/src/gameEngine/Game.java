@@ -7,6 +7,7 @@ import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
+import javafx.scene.control.MenuItem;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.text.Font;
@@ -17,6 +18,8 @@ public class Game extends Application {
 	private boolean mode; // true = custom, false = express
 	private int numFailed; //number of drops that hit the floor
 	private IntegerProperty score; //the number of drops that successfully land in the beaker
+	private MenuItem express;
+	private MenuItem custom;
 	
 	private Text scoreboard; //the scoreboard (obviously)
 
@@ -62,6 +65,9 @@ public class Game extends Application {
 		scoreboard.setFont(new Font(20));
 		MenuBar menubar = new MenuBar();
 		Menu file = new Menu("File");
+		express = new MenuItem("Express Mode");
+		custom = new MenuItem("Custom Mode");
+		file.getItems().addAll(express, custom);
 		menubar.getMenus().add(file);
 		HBox hB = new HBox(20, scoreboard);
 		hB.setPadding(new Insets(20, 50, 20, 700));
