@@ -15,7 +15,7 @@ import javafx.scene.image.Image;
  */
 public class LiquidDrop extends Actor {
 
-    private double gravity;
+    private double speed;
 
     /**
      * Creates a new {@code LiquidDrop} object with specified
@@ -24,19 +24,19 @@ public class LiquidDrop extends Actor {
      * @param startY the starting y-coordinate
      */
     public LiquidDrop(double startX, double startY) {
-        this(startX, startY, 5);
+        this(startX, startY, 3);
     }
 
     /**
      * Creates a new {@code LiquidDrop} object with specified
-     * starting coordinates and gravity.
+     * starting coordinates and speed.
      * @param startX the starting x-coordinate
      * @param startY the starting y-coordinate
-     * @param gravity the gravity to which this drop falls
+     * @param speed the gravity to which this drop falls
      */
-    public LiquidDrop(double startX, double startY, double gravity) {
+    public LiquidDrop(double startX, double startY, double speed) {
         super(startX, startY, new Image("file:images/drop.png"));
-        this.gravity = gravity;
+        this.speed = speed;
     }
 
     /**
@@ -53,7 +53,7 @@ public class LiquidDrop extends Actor {
      */
     @Override
     public void act() {
-        move(0, gravity);
+        move(0, speed += 0.5);
         if(isTouchingFloor()) {
         	getWorld().remove(this);
         }
@@ -63,11 +63,11 @@ public class LiquidDrop extends Actor {
         }
     }
 
-	public double getGravity() {
-		return gravity;
+	public double getSpeed() {
+		return speed;
 	}
 
-	public void setGravity(double gravity) {
-		this.gravity = gravity;
+	public void setSpeed(double speed) {
+		this.speed = speed;
 	}
 }
