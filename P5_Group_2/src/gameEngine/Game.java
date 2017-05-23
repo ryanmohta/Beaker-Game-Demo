@@ -5,6 +5,8 @@ import javafx.application.Application;
 import javafx.beans.property.IntegerProperty;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
+import javafx.scene.control.Menu;
+import javafx.scene.control.MenuBar;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.text.Font;
@@ -58,10 +60,14 @@ public class Game extends Application {
 		
 		scoreboard = new Text("Score: 0");
 		scoreboard.setFont(new Font(20));
+		MenuBar menubar = new MenuBar();
+		Menu file = new Menu("File");
+		menubar.getMenus().add(file);
 		HBox hB = new HBox(20, scoreboard);
 		hB.setPadding(new Insets(20, 50, 20, 700));
-		bP.setTop(hB);
-		
+		bP.setBottom(hB);
+		bP.setTop(menubar);
+
 		Scene scene = new Scene(bP, 800, 600);
 		stage.setScene(scene);
 		stage.setTitle("Beaker Game");
