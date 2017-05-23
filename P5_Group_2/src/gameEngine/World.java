@@ -1,6 +1,7 @@
 package gameEngine;
 
 import javafx.animation.AnimationTimer;
+import javafx.beans.property.IntegerProperty;
 import javafx.scene.Node;
 import javafx.scene.layout.Pane;
 
@@ -22,7 +23,8 @@ import java.util.List;
 public abstract class World extends Pane {
     private AnimationTimer timer;
     
-    private int score = 0;
+	private IntegerProperty score; //the number of drops that successfully land in the beaker
+
 
     /**
      * Creates a new {@code World} and starts the {@code AnimationTimer}
@@ -92,11 +94,11 @@ public abstract class World extends Pane {
     }
     
     public int getScore() {
-    	return score;
+    	return score.get();
     }
     
     public void incrementScore() {
-    	score++;
+    	score.set(score.get() + 1);
     }
 
     /**

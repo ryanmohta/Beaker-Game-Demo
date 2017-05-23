@@ -58,7 +58,7 @@ public class LiquidDrop extends Actor {
         	getWorld().remove(this);
         }
         else if(getOneIntersectingObject(Beaker.class) != null) {
-        	getWorld().incrementScore();
+        	((BeakerWorld)getWorld()).getModel().incrementScore();
         	getWorld().remove(this);
         }
     }

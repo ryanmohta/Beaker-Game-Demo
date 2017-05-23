@@ -2,7 +2,6 @@ package gameEngine;
 
 import game.*;
 import javafx.application.Application;
-import javafx.beans.property.IntegerProperty;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
@@ -11,49 +10,20 @@ import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
-public class Game extends Application {
+public class Game extends Application implements ModelListener {
+	private Model model;
+	
 	private boolean mode; // true = custom, false = express
 	private int numFailed; //number of drops that hit the floor
-	private IntegerProperty score; //the number of drops that successfully land in the beaker
 	
 	private Text scoreboard; //the scoreboard (obviously)
 
-	public void setMode(boolean newmode){
-		mode = newmode;
-	}
-
-	public boolean getMode() {
-		return mode;
-	}
-
-	public void setScore(int newscore) {
-		if (newscore >= 0) 
-			score.set(newscore);
-	}
-
-	public int getScore() {
-		return score.get();
-	}
-	
-	public void incrementScore() {
-		score.set(score.get() + 1);
-	}
-	
-	public int getNumFailed() {
-		return numFailed;
-	}
-
-
-	public boolean isGameOver() {
-		if (numFailed >= 5)
-			return true;
-		return false;
-	}
-	
-
 	@Override
-	public void start(Stage stage) throws Exception {		
-		BeakerWorld world = new BeakerWorld();
+	public void start(Stage stage) throws Exception {
+		model = new Model();
+		model.addModelListener(this);
+		
+		BeakerWorld world = new BeakerWorld(model);
 		BorderPane bP = new BorderPane(world);
 		
 		scoreboard = new Text("Score: 0");
@@ -91,7 +61,32 @@ public class Game extends Application {
 		
 	 */
 	
+	public void setMode(boolean newmode){
+		mode = newmode;
+	}
+
+	public boolean getMode() {
+		return mode;
+	}
+	
+	public int getNumFailed() {
+		return numFailed;
+	}
+
+
+	public boolean isGameOver() {
+		if (numFailed >= 5)
+			return true;
+		return false;
+	}
+		
 	public static void main (String [] args) {
 		launch(args);
+	}
+
+	@Override
+	public void scoreChanged(int newValue) {
+		scoreboard.setText("Score: " + newValue);
+		
 	}
 }

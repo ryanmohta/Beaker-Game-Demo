@@ -15,10 +15,12 @@ import javafx.scene.input.KeyEvent;
  */
 public class BeakerWorld extends World {
 
-	private int secondCount = 0;
 	private double actCount = 0;
+	private Model model;
 	
-	public BeakerWorld() {
+	public BeakerWorld(Model model) {
+		this.model = model;
+		
 		sceneProperty().addListener(new ChangeListener<Scene>() {
 			@Override
 			public void changed(ObservableValue<? extends Scene> observable, Scene oldValue, Scene newValue) {
@@ -58,5 +60,13 @@ public class BeakerWorld extends World {
 			};
 		});
 		
+	}
+	
+	public Model getModel() {
+		return model;
+	}
+	
+	public void setModel(Model newModel) {
+		model = newModel;
 	}
 }
