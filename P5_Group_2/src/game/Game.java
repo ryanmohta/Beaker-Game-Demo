@@ -15,10 +15,11 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 public class Game extends Application implements ModelListener {
+	
+	//The model containing the score and whether the game is finished or not.
 	private Model model;
 	
 	private boolean mode; // true = custom, false = express
-	private int numFailed; //number of drops that hit the floor
 	
 	private Text scoreboard; //the scoreboard (obviously)
 
@@ -53,6 +54,11 @@ public class Game extends Application implements ModelListener {
 		world.start();
 		stage.show();
 	}
+	
+	@Override
+	public void stop() {
+		
+	}
 		
 	public void setMode(boolean newmode){
 		mode = newmode;
@@ -61,19 +67,8 @@ public class Game extends Application implements ModelListener {
 	public boolean getMode() {
 		return mode;
 	}
-	
-	public int getNumFailed() {
-		return numFailed;
-	}
-
-
-	public boolean isGameOver() {
-		if (numFailed >= 5)
-			return true;
-		return false;
-	}
-		
-	public static void main (String [] args) {
+			
+	public static void main(String [] args) {
 		launch(args);
 	}
 
