@@ -64,7 +64,7 @@ public class Game extends Application {
 		Scene scene = new Scene(bP, 800, 600);
 		stage.setScene(scene);
 		stage.setTitle("Beaker Game");
-		world.add(new Beaker(400,350));
+		world.add(new Beaker(world.getWidth(), 350));
 		
 		world.start();
 		stage.show();
