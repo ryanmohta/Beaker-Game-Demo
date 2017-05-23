@@ -55,6 +55,7 @@ public class LiquidDrop extends Actor {
     public void act() {
         move(0, speed += 0.5);
         if(isTouchingFloor()) {
+        	((BeakerWorld)getWorld()).getModel().toggleGameFinished();
         	getWorld().remove(this);
         }
         else if(getOneIntersectingObject(Beaker.class) != null) {

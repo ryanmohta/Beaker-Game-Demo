@@ -1,6 +1,7 @@
 package game;
 
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.Menu;
@@ -52,27 +53,7 @@ public class Game extends Application implements ModelListener {
 		world.start();
 		stage.show();
 	}
-	
-	/**
-	    BorderPane root = new BorderPane();
-		HBox top = new HBox();
-		root.setTop(top);
 		
-		Label failedDrops = new Label("Failed Drops: " + Integer.toString(getNumFailed()));
-		Label score = new Label("Score: " + Integer.toString(getScore()) + "      ");
-		Font font = new Font(20);
-		score.setFont(font);
-		failedDrops.setFont(font);
-		top.getChildren().addAll(score, failedDrops);
-		
-		
-		
-		Scene scene = new Scene(root,800,600);
-		stage.setScene(scene);
-		stage.show();
-		
-	 */
-	
 	public void setMode(boolean newmode){
 		mode = newmode;
 	}
@@ -100,5 +81,11 @@ public class Game extends Application implements ModelListener {
 	public void scoreChanged(int newValue) {
 		scoreboard.setText("Score: " + newValue);
 		
+	}
+
+	@Override
+	public void gameFinishedChanged(boolean newValue) {
+		scoreboard.setText("Game Over!");
+		Platform.exit();
 	}
 }
