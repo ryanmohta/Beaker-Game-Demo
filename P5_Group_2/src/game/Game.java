@@ -1,7 +1,6 @@
 package game;
 
 import javafx.application.Application;
-import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
@@ -16,6 +15,13 @@ import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
+/**
+ * {@link Game} is the GUI class for our project. It extends
+ * {@link Application} and contains {@link javafx.scene.Node}
+ * objects to create the layout of the game.
+ *
+ * @author Ryan Mohta and Oleon Hariharan
+ */
 public class Game extends Application implements ModelListener {
 
 	private boolean mode; // true = custom, false = express
@@ -82,16 +88,31 @@ public class Game extends Application implements ModelListener {
 		world.toggleAcceptingKeystrokes();
 	}
 
+	/**
+	 * Resets the {@link BeakerWorld} to its original form.
+	 * Used for starting a new game.
+	 */
 	public void reset() {
 		beaker.start();
 		world.setAcceptingKeystrokes(true);
 		world.getModel().setScore(0);
 	}
-		
-	public void setMode(boolean newmode){
-		mode = newmode;
+
+	/**
+	 * Sets the {@code mode} variable to the parameter.
+	 * @param newMode the new {@code mode} value.
+	 *                {@code true} is custom,
+	 *             {@code false} is express.
+	 */
+	public void setMode(boolean newMode){
+		mode = newMode;
 	}
 
+	/**
+	 * Returns the {@code mode} for the Game.
+	 * @return the mode. {@code true} is custom,
+	 * {@code false} is express.
+	 */
 	public boolean getMode() {
 		return mode;
 	}
