@@ -15,7 +15,6 @@ import javafx.scene.input.KeyEvent;
  */
 public class BeakerWorld extends World {
 
-	private double actCount = 0;
 	private Model model;
 	private boolean acceptingKeystrokes = true;
 	
@@ -47,11 +46,6 @@ public class BeakerWorld extends World {
 
 	@Override
 	public void act(long now) {
-//		int currentActCount = (int)(now / 10E8);
-//		if(currentActCount >= actCount + 1) {
-//			actCount = currentActCount;
-//		}
-//		
 		setOnKeyPressed(new EventHandler<KeyEvent>() {
 			@Override
 			public void handle(KeyEvent event) {
