@@ -13,11 +13,9 @@ import javafx.scene.image.Image;
  */
 public class Beaker extends Actor { 
 
-	private double initialSpeed;
-	private double speed;
-	private boolean toRight = true;
-	private double acceleration = 0.001; //the amount the beaker speeds
-											//up every act method
+	private final double INITIAL_SPEED, INITIAL_ACCELERATION = 0.001; // the initial speed and acceleration of the beaker.
+	private double speed, acceleration = INITIAL_ACCELERATION; // the current speed and acceleration of the beaker.
+	private boolean toRight = true; // the direction of the beaker.
 
 	/**
 	 * Creates a new {@code Beaker} with the specified
@@ -35,16 +33,17 @@ public class Beaker extends Actor {
 	 * starting coordinates and starting speed.
 	 * @param startX the starting x-coordinate
 	 * @param startY the starting y-coordinate
-	 * @param startSpeed the starting speed of the beaker
+	 * @param initialSpeed the initial speed of the beaker
 	 */
-	public Beaker(double startX, double startY, double startSpeed) {
+	public Beaker(double startX, double startY, double initialSpeed) {
 		super(startX, startY, new Image("file:images/beaker.png"));
-		this.speed = initialSpeed = startSpeed;
+		this.speed = INITIAL_SPEED = initialSpeed;
 	}
 	
 	/**
 	 * Moves the {@code Beaker} from left to right, or right to left if it hits 
-	 * the right wall.
+	 * the right wall. Additionally, the speed of the beaker increases by the
+	 * acceleration every time the {@code act()} method is called.
 	 */
 	@Override
 	public void act() {
@@ -64,7 +63,7 @@ public class Beaker extends Actor {
 	 * @param newSpeed the new speed of this beaker.
 	 */
 	public void setSpeed(double newSpeed) {
-		speed = initialSpeed = newSpeed;
+		speed = newSpeed;
 	};
 
 	/**
@@ -75,13 +74,19 @@ public class Beaker extends Actor {
 		return speed;
 	}
 
-	public double getInitialSpeed() {
-		return initialSpeed;
+	/**
+	 * Starts the {@code Beaker} with initial speed and acceleration values.
+	 */
+	public void start() {
+		speed = INITIAL_SPEED;
+		acceleration = INITIAL_ACCELERATION;
 	}
-	
+
+	/**
+	 * Removes movement from the {@code Beaker}.
+	 */
 	public void stop() {
-		speed = 0;
-		acceleration = 0;
+		speed = acceleration = 0;
 	}
 	
 	/**

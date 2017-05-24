@@ -83,7 +83,7 @@ public class Game extends Application implements ModelListener {
 	}
 
 	public void reset() {
-		beaker.setSpeed(beaker.getInitialSpeed());
+		beaker.start();
 		world.setAcceptingKeystrokes(true);
 		world.getModel().setScore(0);
 	}
