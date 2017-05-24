@@ -3,10 +3,10 @@ import gameEngine.*;
 import javafx.scene.image.Image;
 
 /**
- * {@code Beaker} is an {@code Actor} that is a 
+ * {@link Beaker} is an {@link Actor} that is a
  * cylindrical container. The beaker moves across 
  * the screen from left to right and bounces off the 
- * wall. The beaker is meant to hold {@code LiquidDrop} 
+ * wall. The beaker is meant to hold {@link LiquidDrop}
  * objects.
  * 
  * @author Pratha Bodas and Ryan Mohta
@@ -18,7 +18,7 @@ public class Beaker extends Actor {
 	private boolean toRight = true; // the direction of the beaker.
 
 	/**
-	 * Creates a new {@code Beaker} with the specified
+	 * Creates a new {@link Beaker} with the specified
 	 * starting coordinates and starting speed of 
 	 * {@code 5}.
 	 * @param xPos the starting x-coordinate
@@ -29,7 +29,7 @@ public class Beaker extends Actor {
 	}
 
 	/**
-	 * Creates a new {@code Beaker} with the specified
+	 * Creates a new {@link Beaker} with the specified
 	 * starting coordinates and starting speed.
 	 * @param startX the starting x-coordinate
 	 * @param startY the starting y-coordinate
@@ -41,7 +41,7 @@ public class Beaker extends Actor {
 	}
 	
 	/**
-	 * Moves the {@code Beaker} from left to right, or right to left if it hits 
+	 * Moves the {@link Beaker} from left to right, or right to left if it hits
 	 * the right wall. Additionally, the speed of the beaker increases by the
 	 * acceleration every time the {@code act()} method is called.
 	 */
@@ -67,7 +67,7 @@ public class Beaker extends Actor {
 	};
 
 	/**
-	 * Returns the speed of the {@code Beaker}.
+	 * Returns the speed of the {@link Beaker}.
 	 * @return the speed of the beaker.
 	 */
 	public double getSpeed() {
@@ -75,7 +75,7 @@ public class Beaker extends Actor {
 	}
 
 	/**
-	 * Starts the {@code Beaker} with initial speed and acceleration values.
+	 * Starts the {@link Beaker} with initial speed and acceleration values.
 	 */
 	public void start() {
 		speed = INITIAL_SPEED;
@@ -83,14 +83,14 @@ public class Beaker extends Actor {
 	}
 
 	/**
-	 * Removes movement from the {@code Beaker}.
+	 * Removes movement from the {@link Beaker}.
 	 */
 	public void stop() {
 		speed = acceleration = 0;
 	}
 	
 	/**
-	 * Changes the current direction of the {@code Beaker}.
+	 * Changes the current direction of the {@link Beaker}.
 	 */
 	public void changeDirection() {
 		toRight = !toRight;
