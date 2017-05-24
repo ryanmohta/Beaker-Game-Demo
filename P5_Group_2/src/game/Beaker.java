@@ -13,6 +13,7 @@ import javafx.scene.image.Image;
  */
 public class Beaker extends Actor { 
 
+	private double initialSpeed;
 	private double speed;
 	private boolean toRight = true;
 	private double acceleration = 0.001; //the amount the beaker speeds
@@ -38,7 +39,7 @@ public class Beaker extends Actor {
 	 */
 	public Beaker(double startX, double startY, double startSpeed) {
 		super(startX, startY, new Image("file:images/beaker.png"));
-		this.speed = startSpeed;
+		this.speed = initialSpeed = startSpeed;
 	}
 	
 	/**
@@ -63,7 +64,7 @@ public class Beaker extends Actor {
 	 * @param newSpeed the new speed of this beaker.
 	 */
 	public void setSpeed(double newSpeed) {
-		speed = newSpeed;
+		speed = initialSpeed = newSpeed;
 	};
 
 	/**
@@ -72,6 +73,10 @@ public class Beaker extends Actor {
 	 */
 	public double getSpeed() {
 		return speed;
+	}
+
+	public double getInitialSpeed() {
+		return initialSpeed;
 	}
 	
 	public void stop() {
