@@ -4,7 +4,7 @@ import gameEngine.*;
 import javafx.scene.image.Image;
 
 /**
- * A {@code LiquidDrop} is an {@code Actor} that is able
+ * A {@link LiquidDrop} is an {@link Actor} that is able
  * to be released upon the click of the dropper. Once released,
  * the drop will fall straight down and could possibly fall
  * into the moving beaker depending on the accuracy of the click.
@@ -18,7 +18,7 @@ public class LiquidDrop extends Actor {
     private double speed;
 
     /**
-     * Creates a new {@code LiquidDrop} object with specified
+     * Creates a new {@link LiquidDrop} object with specified
      * starting coordinates and a gravity of {@code 5}.
      * @param startX the starting x-coordinate
      * @param startY the starting y-coordinate
@@ -28,7 +28,7 @@ public class LiquidDrop extends Actor {
     }
 
     /**
-     * Creates a new {@code LiquidDrop} object with specified
+     * Creates a new {@link LiquidDrop} object with specified
      * starting coordinates and speed.
      * @param startX the starting x-coordinate
      * @param startY the starting y-coordinate
@@ -40,7 +40,7 @@ public class LiquidDrop extends Actor {
     }
 
     /**
-     * Returns if this liquid drop is touching the floor
+     * Returns if this {@link LiquidDrop} is touching the floor
      * @return if this liquid drop is touching the floor
      */
     public boolean isTouchingFloor() {
@@ -48,7 +48,7 @@ public class LiquidDrop extends Actor {
     }
 
     /**
-     * Allows for the liquid drop to fall, resetting the 
+     * Allows for the {@link LiquidDrop} to fall, resetting the
      * {@code y} position every millisecond.
      */
     @Override
@@ -64,10 +64,18 @@ public class LiquidDrop extends Actor {
         }
     }
 
-	public double getSpeed() {
+    /**
+     * Gets the speed of this {@link LiquidDrop}.
+     * @return the speed of this liquid drop.
+     */
+    public double getSpeed() {
 		return speed;
 	}
 
+    /**
+     * Sets the speed of this {@link LiquidDrop} to the specified value.
+     * @param speed the new speed of this liquid drop.
+     */
 	public void setSpeed(double speed) {
 		this.speed = speed;
 	}
