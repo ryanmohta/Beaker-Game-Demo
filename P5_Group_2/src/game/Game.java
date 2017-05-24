@@ -38,24 +38,24 @@ public class Game extends Application implements ModelListener {
 		MenuBar menubar = new MenuBar();
 			Menu file = new Menu("File");
 				MenuItem newExpress = new MenuItem("New Express Game");
-//				newExpress.setOnAction(new EventHandler<ActionEvent>() {
-//					@Override
-//					public void handle(ActionEvent event) {
-//						try {
-//							start(stage);
-//						} catch (Exception e) {
-//							e.printStackTrace();
-//						}
-//					}
-//				});
+				newExpress.setOnAction(new EventHandler<ActionEvent>() {
+					@Override
+					public void handle(ActionEvent event) {
+						try {
+							start(stage);
+						} catch (Exception e) {
+							e.printStackTrace();
+						}
+					}
+				});
 				MenuItem newCustom = new MenuItem("New Custom Game...");
 				MenuItem quit = new MenuItem("Quit");
-//				quit.setOnAction(new EventHandler<ActionEvent>() {
-//					@Override
-//					public void handle(ActionEvent event) {
-//						Platform.exit();
-//					}
-//				});
+				quit.setOnAction(new EventHandler<ActionEvent>() {
+					@Override
+					public void handle(ActionEvent event) {
+						Platform.exit();
+					}
+				});
 				file.getItems().addAll(newExpress, newCustom, new SeparatorMenuItem(), quit);
 		menubar.getMenus().addAll(file);
 		
