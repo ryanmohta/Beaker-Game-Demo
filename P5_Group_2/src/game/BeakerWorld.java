@@ -17,6 +17,7 @@ public class BeakerWorld extends World {
 
 	private double actCount = 0;
 	private Model model;
+	private boolean acceptingKeystrokes = true;
 	
 	public BeakerWorld(Model model) {
 		this.model = model;
@@ -46,15 +47,15 @@ public class BeakerWorld extends World {
 
 	@Override
 	public void act(long now) {
-		int currentActCount = (int)(now / 10E8);
-		if(currentActCount >= actCount + 1) {
-			actCount = currentActCount;
-		}
-		
+//		int currentActCount = (int)(now / 10E8);
+//		if(currentActCount >= actCount + 1) {
+//			actCount = currentActCount;
+//		}
+//		
 		setOnKeyPressed(new EventHandler<KeyEvent>() {
 			@Override
 			public void handle(KeyEvent event) {
-				if(event.getCode() == KeyCode.SPACE) {
+				if(acceptingKeystrokes && event.getCode() == KeyCode.SPACE) {
 					add(new LiquidDrop(400, 50));
 				}
 			};
@@ -68,5 +69,17 @@ public class BeakerWorld extends World {
 	
 	public void setModel(Model newModel) {
 		model = newModel;
+	}
+	
+	public boolean getAcceptingKeystrokes() {
+		return acceptingKeystrokes;
+	}
+	
+	public void setAcceptingKeystrokes(boolean acceptingKeystrokes) {
+		this.acceptingKeystrokes = acceptingKeystrokes;
+	}
+	
+	public void toggleAcceptingKeystrokes() {
+		setAcceptingKeystrokes(!acceptingKeystrokes);
 	}
 }

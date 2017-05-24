@@ -21,14 +21,16 @@ public class Game extends Application implements ModelListener {
 	
 	private boolean mode; // true = custom, false = express
 	
-	private Text scoreboard; //the scoreboard (obviously)
-
+	private BeakerWorld world; // the world!
+	private Beaker beaker; // the beaker used during the game.
+	private Text scoreboard; // the text box showing the current score.
+	
 	@Override
 	public void start(Stage stage) throws Exception {
 		model = new Model();
 		model.addModelListener(this);
 		
-		BeakerWorld world = new BeakerWorld(model);
+		world = new BeakerWorld(model);
 		BorderPane bP = new BorderPane(world);
 		
 		MenuBar menubar = new MenuBar();
@@ -49,7 +51,9 @@ public class Game extends Application implements ModelListener {
 		Scene scene = new Scene(bP, 800, 600);
 		stage.setScene(scene);
 		stage.setTitle("Beaker Game");
-		world.add(new Beaker(world.getWidth(), 350));
+
+		beaker = new Beaker(world.getWidth(), 350);
+		world.add(beaker);
 		
 		world.start();
 		stage.show();
@@ -57,7 +61,8 @@ public class Game extends Application implements ModelListener {
 	
 	@Override
 	public void stop() {
-		
+		beaker.stop();
+		world.toggleAcceptingKeystrokes();
 	}
 		
 	public void setMode(boolean newmode){
@@ -75,12 +80,11 @@ public class Game extends Application implements ModelListener {
 	@Override
 	public void scoreChanged(int newValue) {
 		scoreboard.setText("Score: " + newValue);
-		
 	}
 
 	@Override
 	public void gameFinishedChanged(boolean newValue) {
-		scoreboard.setText("Game Over!");
-		Platform.exit();
+		scoreboard.setText("Game Over!  -  " + scoreboard.getText());
+		stop();
 	}
 }

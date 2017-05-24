@@ -15,7 +15,7 @@ public class Beaker extends Actor {
 
 	private double speed;
 	private boolean toRight = true;
-	private final double ACCELERATION = 0.001; //the amount the beaker speeds
+	private double acceleration = 0.001; //the amount the beaker speeds
 											//up every act method
 
 	/**
@@ -40,6 +40,22 @@ public class Beaker extends Actor {
 		super(startX, startY, new Image("file:images/beaker.png"));
 		this.speed = startSpeed;
 	}
+	
+	/**
+	 * Moves the {@code Beaker} from left to right, or right to left if it hits 
+	 * the right wall.
+	 */
+	@Override
+	public void act() {
+		if(toRight) {
+			move(speed += acceleration, 0);
+		}
+		else move(-(speed += acceleration), 0);
+		
+		if(getX() <= 0 || getX() + getWidth() >= getWorld().getWidth()) {
+			changeDirection();
+		}
+	}
 
 	/**
 	 * Sets the class instance variable {@code speed} to the
@@ -58,29 +74,18 @@ public class Beaker extends Actor {
 		return speed;
 	}
 	
+	public void stop() {
+		speed = 0;
+		acceleration = 0;
+	}
+	
 	/**
 	 * Changes the current direction of the {@code Beaker}.
 	 */
 	public void changeDirection() {
 		toRight = !toRight;
 	}
-	
-	
-	/**
-	 * Moves the {@code Beaker} from left to right, or right to left if it hits 
-	 * the right wall.
-	 */
-	@Override
-	public void act() {
-		if(toRight) {
-			move(speed += ACCELERATION, 0);
-		}
-		else move(-(speed += ACCELERATION), 0);
-		
-		if(getX() <= 0 || getX() + getWidth() >= getWorld().getWidth()) {
-			changeDirection();
-		}
-	}
+
 }
 	
 
