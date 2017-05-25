@@ -24,8 +24,6 @@ import javafx.stage.Stage;
  */
 public class Game extends Application implements ModelListener {
 
-	private boolean mode; // true = custom, false = express
-
 	private BorderPane borderPane; // the BorderPane which contains the MenuBar, World, and HBox.
 
 	private BeakerWorld world; // the world!
@@ -93,25 +91,6 @@ public class Game extends Application implements ModelListener {
 		world.getModel().setScore(0);
 	}
 
-	/**
-	 * Sets the {@code mode} variable to the parameter.
-	 * @param newMode the new {@code mode} value.
-	 *                {@code true} is custom,
-	 *             {@code false} is express.
-	 */
-	public void setMode(boolean newMode){
-		mode = newMode;
-	}
-
-	/**
-	 * Returns the {@code mode} for the Game.
-	 * @return the mode. {@code true} is custom,
-	 * {@code false} is express.
-	 */
-	public boolean getMode() {
-		return mode;
-	}
-			
 	public static void main(String [] args) {
 		launch(args);
 	}
