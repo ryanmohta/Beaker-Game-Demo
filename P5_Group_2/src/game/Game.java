@@ -1,6 +1,7 @@
 package game;
 
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
@@ -39,15 +40,27 @@ public class Game extends Application implements ModelListener {
 		MenuBar menuBar = new MenuBar();
 		Menu file = new Menu("File");
 		MenuItem newExpress = new MenuItem("New Express Game");
-				newExpress.setOnAction(new EventHandler<ActionEvent>() {
-					@Override
-					public void handle(ActionEvent event) {
-						reset();
-					}
-				});
+			newExpress.setOnAction(new EventHandler<ActionEvent>() {
+				@Override
+				public void handle(ActionEvent event) {
+					reset();
+				}
+			});
 		MenuItem newCustom = new MenuItem("New Custom Game...");
+			newCustom.setOnAction(new EventHandler<ActionEvent>() {
+				@Override
+				public void handle(ActionEvent event) {
+					//TODO
+				}
+			});
 		MenuItem quit = new MenuItem("Quit");
-			file.getItems().addAll(newExpress, newCustom, new SeparatorMenuItem(), quit);
+			quit.setOnAction(new EventHandler<ActionEvent>() {
+				@Override
+				public void handle(ActionEvent event) {
+					Platform.exit();
+				}
+			});
+		file.getItems().addAll(newExpress, newCustom, new SeparatorMenuItem(), quit);
 		menuBar.getMenus().addAll(file);
 
 		scoreboard = new Text("Score: 0");
