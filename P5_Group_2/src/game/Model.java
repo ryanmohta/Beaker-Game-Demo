@@ -3,7 +3,7 @@ package game;
 import java.util.ArrayList;
 
 /**
- * The {@link Model} class is a class that provides data
+ * The {@code Model} class is a class that provides data
  * to the {@link BeakerWorld} and {@link Game} classes.
  * This data includes the score for the game and whether
  * or not the game is finished or not.
@@ -16,14 +16,14 @@ public class Model {
 	private ArrayList<ModelListener> listeners;
 
 	/**
-	 * Initializes a new {@link Model} with a score of {@code 0}.
+	 * Initializes a new {@code Model} with a score of {@code 0}.
 	 */
 	public Model() {
 		this(0);
 	}
 
 	/**
-	 * Initializes a new {@link Model} with the specified score.
+	 * Initializes a new {@code Model} with the specified score.
 	 * @param score the score.
 	 */
 	public Model(int score) {

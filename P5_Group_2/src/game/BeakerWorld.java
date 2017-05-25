@@ -20,7 +20,7 @@ public class BeakerWorld extends World {
 	private boolean acceptingKeystrokes = true;
 
 	/**
-	 * Creates a new {@link BeakerWorld} with the specified {@link Model}.
+	 * Creates a new {@code BeakerWorld} with the specified {@link Model}.
 	 * @param model a {@link Model} that keeps track of score and whether
 	 *                 the game is done or not.
 	 */
@@ -64,7 +64,7 @@ public class BeakerWorld extends World {
 	}
 
 	/**
-	 * Returns the {@link Model} used by this {@link BeakerWorld}.
+	 * Returns the {@link Model} used by this {@code BeakerWorld}.
 	 * @return the Model used by the BeakerWorld.
 	 */
 	public Model getModel() {
@@ -80,7 +80,7 @@ public class BeakerWorld extends World {
 	}
 
 	/**
-	 * Returns if this {@link BeakerWorld} is accepting keystrokes.
+	 * Returns if this {@code BeakerWorld} is accepting keystrokes.
 	 * @return whether this BeakerWorld is accepting keystrokes.
 	 */
 	public boolean getAcceptingKeystrokes() {
@@ -88,7 +88,7 @@ public class BeakerWorld extends World {
 	}
 
 	/**
-	 * Sets if this {@link BeakerWorld} is accepting keystrokes.
+	 * Sets if this {@code BeakerWorld} is accepting keystrokes.
 	 * @param acceptingKeystrokes whether this BeakerWorld is accepting keystrokes.
 	 */
 	public void setAcceptingKeystrokes(boolean acceptingKeystrokes) {
@@ -96,7 +96,7 @@ public class BeakerWorld extends World {
 	}
 
 	/**
-	 * Switches this {@link BeakerWorld} from accepting keystrokes to not, or vice versa.
+	 * Switches this {@code BeakerWorld} from accepting keystrokes to not, or vice versa.
 	 */
 	public void toggleAcceptingKeystrokes() {
 		setAcceptingKeystrokes(!acceptingKeystrokes);

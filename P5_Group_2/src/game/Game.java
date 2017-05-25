@@ -16,7 +16,7 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 /**
- * {@link Game} is the GUI class for our project. It extends
+ * {@code Game} is the GUI class for our project. It extends
  * {@link Application} and contains {@link javafx.scene.Node}
  * objects to create the layout of the game.
  *
