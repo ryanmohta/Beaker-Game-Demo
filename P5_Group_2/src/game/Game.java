@@ -1,5 +1,7 @@
 package game;
 
+import java.util.Optional;
+
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
@@ -10,6 +12,7 @@ import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.SeparatorMenuItem;
+import javafx.scene.control.TextInputDialog;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.text.Font;
@@ -50,7 +53,11 @@ public class Game extends Application implements ModelListener {
 			newCustom.setOnAction(new EventHandler<ActionEvent>() {
 				@Override
 				public void handle(ActionEvent event) {
-					//TODO
+					TextInputDialog dialog = new TextInputDialog("5");
+					dialog.setTitle("Custom Game");
+					dialog.setContentText("Please enter a speed for the beaker(enter an integer): ");
+					
+					Optional<String> result = dialog.showAndWait();
 				}
 			});
 		MenuItem quit = new MenuItem("Quit");
