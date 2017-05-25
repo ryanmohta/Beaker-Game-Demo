@@ -18,6 +18,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 /**
  * {@code Game} is the GUI class for our project. It extends
@@ -55,9 +56,12 @@ public class Game extends Application implements ModelListener {
 				public void handle(ActionEvent event) {
 					TextInputDialog dialog = new TextInputDialog("5");
 					dialog.setTitle("Custom Game");
-					dialog.setContentText("Please enter a speed for the beaker(enter an integer): ");
-					
+					dialog.setHeaderText("Set Initial Beaker Speed");
+					dialog.setContentText("Enter new initial speed (must be a number): ");
+
 					Optional<String> result = dialog.showAndWait();
+					reset();
+					beaker.setSpeed(Double.parseDouble(result.get()));
 				}
 			});
 		MenuItem quit = new MenuItem("Quit");
