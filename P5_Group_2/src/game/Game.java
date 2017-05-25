@@ -28,14 +28,9 @@ public class Game extends Application implements ModelListener {
 
 	private BorderPane borderPane; // the BorderPane which contains the MenuBar, World, and HBox.
 
-	private MenuBar menuBar;
-	private Menu file;
-	private MenuItem newExpress, newCustom, quit;
-
 	private BeakerWorld world; // the world!
 	private Beaker beaker; // the beaker used during the game.
 
-	private HBox hBox;
 	private Text scoreboard; // the text box showing the current score.
 
 	@Override
@@ -43,24 +38,24 @@ public class Game extends Application implements ModelListener {
 		Model model = new Model();
 		model.addModelListener(this);
 
-		menuBar = new MenuBar();
-			file = new Menu("File");
-				newExpress = new MenuItem("New Express Game");
+		MenuBar menuBar = new MenuBar();
+		Menu file = new Menu("File");
+		MenuItem newExpress = new MenuItem("New Express Game");
 				newExpress.setOnAction(new EventHandler<ActionEvent>() {
 					@Override
 					public void handle(ActionEvent event) {
 						reset();
 					}
 				});
-				newCustom = new MenuItem("New Custom Game...");
-				quit = new MenuItem("Quit");
+		MenuItem newCustom = new MenuItem("New Custom Game...");
+		MenuItem quit = new MenuItem("Quit");
 			file.getItems().addAll(newExpress, newCustom, new SeparatorMenuItem(), quit);
 		menuBar.getMenus().addAll(file);
 
 		scoreboard = new Text("Score: 0");
 		scoreboard.setFont(new Font(20));
 
-		hBox = new HBox(20, scoreboard);
+		HBox hBox = new HBox(20, scoreboard);
 		hBox.setPadding(new Insets(20));
 
 		world = new BeakerWorld(model);

@@ -58,7 +58,7 @@ public class BeakerWorld extends World {
 				if(acceptingKeystrokes && event.getCode() == KeyCode.SPACE) {
 					add(new LiquidDrop(400, 50));
 				}
-			};
+			}
 		});
 		
 	}
